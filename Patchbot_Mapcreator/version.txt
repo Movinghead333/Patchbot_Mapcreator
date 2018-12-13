@@ -1,0 +1,4 @@
+Patchbot_Mapcreator version-file:
+
+vc 0:
+	- initial commit

@@ -52,4 +52,9 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="version.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
