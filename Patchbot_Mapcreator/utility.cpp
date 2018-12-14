@@ -33,6 +33,32 @@ TileType Utility::get_tile_type_from_char(char p_char)
 	}
 }
 
+char Utility::get_char_from_tile_type(TileType p_tile_Type)
+{
+	switch (p_tile_Type)
+	{
+	case ROOT_SERVER:		  return 'P'; break;
+	case STEELPLANKS:		  return ' '; break;
+	case INDESTRUCTABLE_WALL: return '#'; break;
+	case DESTRUCTABLE_WALL:   return 'M'; break;
+	case MANUAL_DOOR_CLOSED:  return 'd'; break;
+	case AUTO_DOOR_CLOSED:    return 'D'; break;
+	case ALIEN_GRASS:		  return 'g'; break;
+	case GRAVEL:			  return '.'; break;
+	case SECRET_ENTRANCE:	  return 'x'; break;
+	case ABYSS:				  return 'O'; break;
+	case WATER:				  return '~'; break;
+	case PATCHBOT:			  return 'p'; break;
+	case BUGGER:			  return '1'; break;
+	case PUSHER:			  return '2'; break;
+	case DIGGER:			  return '3'; break;
+	case SWIMMER:			  return '4'; break;
+	case FOLLOWER:			  return '5'; break;
+	case HUNTER:			  return '6'; break;
+	case SNIFFER:			  return '7'; break;
+	}
+}
+
 
 
 

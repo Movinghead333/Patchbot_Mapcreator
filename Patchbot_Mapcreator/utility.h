@@ -15,6 +15,8 @@ public:
 	static bool is_number(const std::string& s);
 
 	static TileType get_tile_type_from_char(char p_char);
+
+	static char get_char_from_tile_type(TileType p_tile_type);
 };
 
 #endif

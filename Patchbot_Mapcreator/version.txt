@@ -5,3 +5,11 @@ vc 0:
 
 vc 1:
 	- added functionality to loads maps into Map data-structure
+
+vc 2:
+	- added functionality to save maps back to textfiles
+
+	
+TODO:
+	- rework documentation
+	- add GUI

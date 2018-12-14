@@ -11,7 +11,9 @@ int main(int argc, char *argv[])
 	//MapEditorGUI w;
 	//w.show();
 
-	Map::load_map("everything.txt");
+	Map m = Map::load_map("everything.txt");
+
+	Map::save_map(m);
 
 	return 0;
 	//return a.exec();
