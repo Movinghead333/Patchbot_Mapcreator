@@ -1,4 +1,23 @@
 <RCC>
-    <qresource prefix="MapEditorGUI">
+    <qresource prefix="/MapEditorGUI">
+        <file>images/abyss.tga</file>
+        <file>images/alien_grass.tga</file>
+        <file>images/auto_door.tga</file>
+        <file>images/destructible_wall.tga</file>
+        <file>images/gravel.tga</file>
+        <file>images/indestructible_wall.tga</file>
+        <file>images/manual_door.tga</file>
+        <file>images/patchbot.tga</file>
+        <file>images/root_server.tga</file>
+        <file>images/secret_entrance.tga</file>
+        <file>images/steelplanks.tga</file>
+        <file>images/typ1_bugger.tga</file>
+        <file>images/typ2_pusher.tga</file>
+        <file>images/typ3_digger.tga</file>
+        <file>images/typ4_swimmer.tga</file>
+        <file>images/typ5_follower.tga</file>
+        <file>images/typ6_hunter.tga</file>
+        <file>images/typ7_sniffer.tga</file>
+        <file>images/water.tga</file>
     </qresource>
 </RCC>

@@ -18,3 +18,4 @@ TileType ViewModel::get_cursor_tile_type() const
 {
 	return m_cursor_tile_type;
 }
+
