@@ -4,7 +4,7 @@
 // enum containing the type of a tile for later comparisons
 enum TileType
 {
-	STEELPLANKS,
+	STEELPLANKS = 0,
 	ABYSS,
 	WATER,
 	ROOT_SERVER,
@@ -23,6 +23,7 @@ enum TileType
 	FOLLOWER,
 	HUNTER,
 	SNIFFER,
+	RESET
 };
 
 #endif

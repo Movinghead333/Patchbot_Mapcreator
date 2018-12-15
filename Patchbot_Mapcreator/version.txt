@@ -21,10 +21,14 @@ vc 5:
 	- added gui
 	- added slots for buttons
 
+vc 6:
+	- all button slots are now implemented
+	- all images are now being laoded
+	- ViewModel is still wip
+
 	
 TODO:
 	- rework documentation
-	- add GUI
 	- check if a map is correct when saving it
 	- add map tile chars and their tiletype representatives
-	- button to display github link for bug reports
+	- button to display github link for bug reports in menu

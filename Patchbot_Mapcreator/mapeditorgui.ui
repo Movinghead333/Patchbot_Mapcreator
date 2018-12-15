@@ -31,6 +31,9 @@ background-color: rgb(87, 172, 200)
 }
 
 /* Images for environment button group TODO add erase/reset image */
+QPushButton#resetButton{
+border-image: url(:/MapEditorGUI/images/reset.tga)
+}
 QPushButton#steelplanksButton{
 border-image: url(:/MapEditorGUI/images/steelplanks.tga)
 }
@@ -867,6 +870,21 @@ border-image: url(:/MapEditorGUI/images/typ7_sniffer.tga)
     <item row="0" column="0" rowspan="6">
      <widget class="QWidget" name="editorLayout" native="true">
       <layout class="QGridLayout" name="asdf">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="RenderWidget" name="mapRenderWidget" native="true">
          <property name="sizePolicy">

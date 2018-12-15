@@ -19,5 +19,6 @@
         <file>images/typ6_hunter.tga</file>
         <file>images/typ7_sniffer.tga</file>
         <file>images/water.tga</file>
+        <file>images/reset.tga</file>
     </qresource>
 </RCC>
