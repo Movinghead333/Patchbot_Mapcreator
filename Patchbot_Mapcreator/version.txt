@@ -28,6 +28,9 @@ vc 6:
 
 vc 7:
 	- added about and report a bug menu points
+
+vc 8:
+	- implemented resizeEvent for MapEditorGUI
 	
 TODO:
 	- rework documentation

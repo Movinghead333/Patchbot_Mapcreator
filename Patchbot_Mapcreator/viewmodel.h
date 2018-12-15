@@ -24,11 +24,19 @@ public:
 		"report it to "
 		"\nhttps://github.com/Movinghead333/Patchbot_Mapcreator/issues";
 
+	// 
+	const std::string MAP_LOADING_ERROR_TITLE = "Error loading map!";
+
+	const int TILE_SIZE = 32;
+
 	// invokes load_images()
 	ViewModel();
 
 	// loads images into memory
 	void load_images();
+
+	// load map from filepath into ViewModel
+	void load_map_from_file_path(const std::string& p_file_path);
 
 	// find a certain qimage by key in map and return a reference for rendering
 	const QImage& find_qimage_by_tile_type(TileType p_tile_type) const;
@@ -36,15 +44,42 @@ public:
 	// get image for cursor
 	const QImage& get_image_for_cursor_render() const;
 
+	// check if there currently is a map instance stored in the ViewModel
+	bool map_available() const;
+
 
 	// GETTERS & SETTERS
+		
+	// get map ref
+	Map& get_current_map();
 
+	// getters and setters for scrollbar positions
+	void set_m_x_scrollbar_pos(int p_new_pos);
+	void set_m_y_scrollbar_pos(int p_new_pos);
+
+	int get_m_x_scrollbar_pos() const;
+	int get_m_y_scrollbar_pos() const;
+
+	// getters and setters for the render width and height
+	void set_m_render_width(int p_new_width);
+	void set_m_render_height(int p_new_height);
+
+	int get_m_render_width() const;
+	int get_m_render_height() const;
 
 	// getter and setter for m_cursor_tile_type
 	void set_cursor_tile_type(TileType p_new_tile_type);
 	TileType get_cursor_tile_type() const;
 
 private:
+	// x and y scrollbar positions
+	int m_x_scrollbar_pos = 0;
+	int m_y_scrollbar_pos = 0;
+
+	// editor render width and height
+	int m_render_width;
+	int m_render_height;
+
 	// stores the map, which is currently being edited
 	std::shared_ptr<Map> m_current_map;
 

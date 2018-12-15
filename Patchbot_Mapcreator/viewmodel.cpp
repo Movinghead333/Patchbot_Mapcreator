@@ -56,15 +56,69 @@ void ViewModel::load_images()
 	}
 }
 
+void ViewModel::load_map_from_file_path(const std::string & p_file_path)
+{
+	m_current_map = std::make_shared<Map>( Map::load_map(p_file_path) );
+}
+
 const QImage & ViewModel::find_qimage_by_tile_type(TileType p_tile_type) const
 {
 	return m_image_map->find(p_tile_type)->second;
-
 }
 
 const QImage & ViewModel::get_image_for_cursor_render() const
 {
 	return find_qimage_by_tile_type(m_cursor_tile_type);
+}
+
+bool ViewModel::map_available() const
+{
+	return m_current_map != nullptr;
+}
+
+Map& ViewModel::get_current_map()
+{
+	return *m_current_map.get();
+}
+
+void ViewModel::set_m_x_scrollbar_pos(int p_new_pos)
+{
+	m_x_scrollbar_pos = p_new_pos;
+}
+
+void ViewModel::set_m_y_scrollbar_pos(int p_new_pos)
+{
+	m_y_scrollbar_pos = p_new_pos;
+}
+
+int ViewModel::get_m_x_scrollbar_pos() const
+{
+	return m_x_scrollbar_pos;
+}
+
+int ViewModel::get_m_y_scrollbar_pos() const
+{
+	return m_y_scrollbar_pos;
+}
+
+void ViewModel::set_m_render_width(int p_new_width)
+{
+	m_render_width = p_new_width;
+}
+
+void ViewModel::set_m_render_height(int p_new_height)
+{
+	m_render_height = p_new_height;
+}
+
+int ViewModel::get_m_render_width() const
+{
+	return m_render_width;
+}
+
+int ViewModel::get_m_render_height() const
+{
+	return m_render_height;
 }
 
 void ViewModel::set_cursor_tile_type(TileType p_new_tile_type)

@@ -41,15 +41,24 @@ private slots:
 	void on_reportBugAction_triggered();
 	void on_aboutAction_triggered();
 
+	// scrollbar slots
+	void scroll_x(int p_new_value);
+	void scroll_y(int p_new_value);
+
+
 public:
 	MapEditorGUI(QWidget *parent = Q_NULLPTR);
 
 	void display_info_message_dialog(const std::string& p_title,
 									 const std::string& p_message);
 
+protected:
+	void resizeEvent(QResizeEvent *event);
+
 private:
 	Ui::MapEditorGUIClass ui;
 
 	std::shared_ptr<ViewModel> m_view_model;
 
+	void handle_resize_event();
 };
