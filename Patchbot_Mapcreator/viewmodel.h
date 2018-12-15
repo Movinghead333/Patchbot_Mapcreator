@@ -12,6 +12,8 @@
 class ViewModel
 {
 public:
+	// CONSTANTS:
+	 
 	// strings for about dialog
 	const std::string ABOUT_MSG =
 		"This is small tool designed to open, edit and save maps for the "
@@ -24,13 +26,18 @@ public:
 		"report it to "
 		"\nhttps://github.com/Movinghead333/Patchbot_Mapcreator/issues";
 
-	// 
+	// string for window upon map loading errors
 	const std::string MAP_LOADING_ERROR_TITLE = "Error loading map!";
 
 	const int TILE_SIZE = 32;
 
+	// PUBLIC METHODS:
+
 	// invokes load_images()
 	ViewModel();
+
+	// set the TileType at a given position to the TileType on cursor
+	void set_map_tile_at_pos_to_cursor(int p_x, int p_y);
 
 	// loads images into memory
 	void load_images();

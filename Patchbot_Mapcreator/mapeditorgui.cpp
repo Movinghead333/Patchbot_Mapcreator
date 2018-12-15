@@ -27,6 +27,8 @@ void MapEditorGUI::resizeEvent(QResizeEvent * event)
 	handle_resize_event();
 }
 
+// handles calculations in case of resizeEvent
+// also gets called when a map is loaded or a new one created
 void MapEditorGUI::handle_resize_event()
 {
 	if (m_view_model->map_available())
@@ -76,7 +78,6 @@ void MapEditorGUI::handle_resize_event()
 
 
 // environment buttons slots
-
 void MapEditorGUI::on_resetButton_clicked()
 {
 	m_view_model->set_cursor_tile_type(RESET);
@@ -201,7 +202,6 @@ void MapEditorGUI::on_snifferButton_clicked()
 
 
 // menu slots
-
 void MapEditorGUI::on_newMapAction_triggered()
 {
 	//display_info_message_dialog("on_newMapAction_triggered");

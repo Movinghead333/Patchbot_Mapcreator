@@ -22,6 +22,8 @@ public:
 
 	TileType get_tile_type_at_pos(int p_x, int p_y) const;
 
+	void set_tile_type_at_pos(int p_x, int p_y, TileType p_tile_type);
+
 private:
 	// height and width of map
 	int m_map_width;

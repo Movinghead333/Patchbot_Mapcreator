@@ -111,7 +111,6 @@ Map Map::load_map(const std::string & p_file_name)
 					{
 						hasEnd = true;
 					}
-					
 				}
 			}
 			// throw exception if the current line is either too short or
@@ -196,5 +195,10 @@ void Map::save_map(const Map& p_map)
 TileType Map::get_tile_type_at_pos(int p_x, int p_y) const
 {
 	return m_map_data[ (p_y * m_map_width) + p_x];
+}
+
+void Map::set_tile_type_at_pos(int p_x, int p_y, TileType p_tile_type)
+{
+	m_map_data[(p_y * m_map_width) + p_x] = p_tile_type;
 }
 

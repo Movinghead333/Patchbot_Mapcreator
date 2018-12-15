@@ -34,6 +34,9 @@ vc 8:
 
 vc 9:
 	- implemented main-render
+
+vc 10:
+	- added mouse interaction for editing the map
 	
 TODO:
 	- rework documentation
@@ -42,4 +45,3 @@ TODO:
 	- add version to about msg
 	- add current map name to window title
 	- add create new colony functionality
-	- add input for drawing on map

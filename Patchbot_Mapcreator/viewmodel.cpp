@@ -5,6 +5,12 @@ ViewModel::ViewModel()
 	load_images();
 }
 
+void ViewModel::set_map_tile_at_pos_to_cursor(int p_x, int p_y)
+{
+	// TODO: checks map conditions
+	m_current_map->set_tile_type_at_pos(p_x, p_y, m_cursor_tile_type);
+}
+
 void ViewModel::load_images()
 {
 	m_image_map = std::make_shared<std::map<TileType, QImage>>(

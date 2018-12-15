@@ -1,6 +1,7 @@
 #include "renderwidget.h"
 
 #include <qpainter.h>
+#include <QMouseEvent>
 
 RenderWidget::RenderWidget(QWidget *parent)
 	: QWidget(parent)
@@ -22,6 +23,39 @@ void RenderWidget::paintEvent(QPaintEvent * event)
 	{
 		render();
 	}
+}
+
+void RenderWidget::mousePressEvent(QMouseEvent *event)
+{
+	if (event->button() == Qt::LeftButton)
+	{
+		handle_mouse_click(event->pos());
+	}
+}
+
+void RenderWidget::mouseMoveEvent(QMouseEvent * event)
+{
+}
+
+void RenderWidget::mouseReleaseEvent(QMouseEvent * event)
+{
+}
+
+void RenderWidget::handle_mouse_click(QPoint p_mouse_pos)
+{
+	int tile_size = m_view_model->TILE_SIZE;
+
+	int x_scrollbar_pos = m_view_model->get_m_x_scrollbar_pos();
+	int y_scrollbar_pos = m_view_model->get_m_y_scrollbar_pos();
+
+	int mouse_x_total = p_mouse_pos.x() + x_scrollbar_pos;
+	int mouse_y_total = p_mouse_pos.y() + y_scrollbar_pos;
+
+	int tile_x = (mouse_x_total - (mouse_x_total % tile_size)) / tile_size;
+	int tile_y = (mouse_y_total - (mouse_y_total % tile_size)) / tile_size;
+
+	m_view_model->set_map_tile_at_pos_to_cursor(tile_x, tile_y);
+	update();
 }
 
 void RenderWidget::render()
@@ -85,8 +119,8 @@ void RenderWidget::render()
 	}
 
 	// calculate the amount of offset needed to enable smooth pixel scrolling
-	int x_pixel_offset = (x_scrollbar_pos % 32) * -1;
-	int y_pixel_offset = (y_scrollbar_pos % 32) * -1;
+	int x_pixel_offset = (x_scrollbar_pos % tile_size) * -1;
+	int y_pixel_offset = (y_scrollbar_pos % tile_size) * -1;
 
 
 	// render ground tiles
