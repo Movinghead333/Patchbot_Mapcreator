@@ -218,7 +218,7 @@ void MapEditorGUI::on_openMapAction_triggered()
 	try
 	{
 		m_view_model->load_map_from_file_path(file_path);
-		// calculate_render_details(); //TODO:implement
+		handle_resize_event();
 	}
 	// catch all specified exceptions
 	catch (const Simple_Message_Exception& e)

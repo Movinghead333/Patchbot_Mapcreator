@@ -31,9 +31,15 @@ vc 7:
 
 vc 8:
 	- implemented resizeEvent for MapEditorGUI
+
+vc 9:
+	- implemented main-render
 	
 TODO:
 	- rework documentation
 	- check if a map is correct when saving it
 	- add map tile chars and their tiletype representatives
 	- add version to about msg
+	- add current map name to window title
+	- add create new colony functionality
+	- add input for drawing on map

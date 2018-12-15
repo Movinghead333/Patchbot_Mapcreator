@@ -20,4 +20,6 @@ protected:
 
 private:
 	std::shared_ptr<ViewModel> m_view_model;
+
+	void render();
 };
