@@ -939,7 +939,15 @@ border-image: url(:/MapEditorGUI/images/typ7_sniffer.tga)
     <addaction name="separator"/>
     <addaction name="saveMapAction"/>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="reportBugAction"/>
+    <addaction name="aboutAction"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -963,6 +971,16 @@ border-image: url(:/MapEditorGUI/images/typ7_sniffer.tga)
   <action name="saveMapAction">
    <property name="text">
     <string>Save</string>
+   </property>
+  </action>
+  <action name="aboutAction">
+   <property name="text">
+    <string>About Patchbot Mapcreator</string>
+   </property>
+  </action>
+  <action name="reportBugAction">
+   <property name="text">
+    <string>Report Bug</string>
    </property>
   </action>
  </widget>

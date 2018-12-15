@@ -38,11 +38,14 @@ private slots:
 	void on_newMapAction_triggered();
 	void on_openMapAction_triggered();
 	void on_saveMapAction_triggered();
+	void on_reportBugAction_triggered();
+	void on_aboutAction_triggered();
 
 public:
 	MapEditorGUI(QWidget *parent = Q_NULLPTR);
 
-	void display_info_message_dialog(const std::string& p_message);
+	void display_info_message_dialog(const std::string& p_title,
+									 const std::string& p_message);
 
 private:
 	Ui::MapEditorGUIClass ui;

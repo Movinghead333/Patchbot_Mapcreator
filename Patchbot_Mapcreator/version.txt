@@ -26,9 +26,11 @@ vc 6:
 	- all images are now being laoded
 	- ViewModel is still wip
 
+vc 7:
+	- added about and report a bug menu points
 	
 TODO:
 	- rework documentation
 	- check if a map is correct when saving it
 	- add map tile chars and their tiletype representatives
-	- button to display github link for bug reports in menu
+	- add version to about msg

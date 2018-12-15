@@ -12,6 +12,18 @@
 class ViewModel
 {
 public:
+	// strings for about dialog
+	const std::string ABOUT_MSG =
+		"This is small tool designed to open, edit and save maps for the "
+		"game Patchbot.";
+	const std::string ABOUT_TITLE = "About";
+
+	// strings for report a bug dialog
+	const std::string REPORT_BUG_TITLE = "Report a bug";
+	const std::string REPORT_BUG_MSG = "If you have found a bug, then please "
+		"report it to "
+		"\nhttps://github.com/Movinghead333/Patchbot_Mapcreator/issues";
+
 	// invokes load_images()
 	ViewModel();
 

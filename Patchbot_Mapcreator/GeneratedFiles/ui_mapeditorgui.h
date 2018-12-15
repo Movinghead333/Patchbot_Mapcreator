@@ -36,6 +36,8 @@ public:
     QAction *newMapAction;
     QAction *openMapAction;
     QAction *saveMapAction;
+    QAction *aboutAction;
+    QAction *reportBugAction;
     QWidget *centralWidget;
     QGridLayout *gridLayout_5;
     QSpacerItem *spacerCursorEnvironment;
@@ -78,6 +80,7 @@ public:
     QScrollBar *editorYScrollbar;
     QMenuBar *menuBar;
     QMenu *menuFile;
+    QMenu *menuAbout;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -98,6 +101,9 @@ public:
 "}\n"
 "\n"
 "/* Images for environment button group TODO add erase/reset image */\n"
+"QPushButton#resetButton{\n"
+"border-image: url(:/MapEditorGUI/images/reset.tga)\n"
+"}\n"
 "QPushButton#steelplanksButton{\n"
 "border-image: url(:/MapEditorGUI/images/steelplanks.tga)\n"
 "}\n"
@@ -116,11 +122,11 @@ public:
 "QPushButton#gravelButton{\n"
 "border-image: url(:/MapEditorGUI/images/gravel.tga)\n"
 "}\n"
-"QPushButton#secretEntranceButton{\n"
+"QPushButton#secretEntranceB"
+                        "utton{\n"
 "border-image: url(:/MapEditorGUI/images/secret_entrance.tga)\n"
 "}\n"
-"QPushBut"
-                        "ton#manualDoorButton{\n"
+"QPushButton#manualDoorButton{\n"
 "border-image: url(:/MapEditorGUI/images/manual_door.tga)\n"
 "}\n"
 "QPushButton#autoDoorButton{\n"
@@ -147,11 +153,11 @@ public:
 "border-image: url(:/MapEditorGUI/images/typ3_digger.tga)\n"
 "}\n"
 "QPushButton#swimmerButton{\n"
-"border-image: url(:/MapEditorGUI/images/typ4_swimmer.tga)\n"
+"border-image: url(:/MapEditorGUI/images/typ4_swimmer.tga"
+                        ")\n"
 "}\n"
 "QPushButton#followerButton{\n"
-"border-image: url(:/MapEditorGUI/images/typ5_f"
-                        "ollower.tga)\n"
+"border-image: url(:/MapEditorGUI/images/typ5_follower.tga)\n"
 "}\n"
 "QPushButton#hunterButton{\n"
 "border-image: url(:/MapEditorGUI/images/typ6_hunter.tga)\n"
@@ -165,6 +171,10 @@ public:
         openMapAction->setObjectName(QStringLiteral("openMapAction"));
         saveMapAction = new QAction(MapEditorGUIClass);
         saveMapAction->setObjectName(QStringLiteral("saveMapAction"));
+        aboutAction = new QAction(MapEditorGUIClass);
+        aboutAction->setObjectName(QStringLiteral("aboutAction"));
+        reportBugAction = new QAction(MapEditorGUIClass);
+        reportBugAction->setObjectName(QStringLiteral("reportBugAction"));
         centralWidget = new QWidget(MapEditorGUIClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_5 = new QGridLayout(centralWidget);
@@ -436,9 +446,10 @@ public:
         editorLayout = new QWidget(centralWidget);
         editorLayout->setObjectName(QStringLiteral("editorLayout"));
         asdf = new QGridLayout(editorLayout);
-        asdf->setSpacing(6);
+        asdf->setSpacing(0);
         asdf->setContentsMargins(11, 11, 11, 11);
         asdf->setObjectName(QStringLiteral("asdf"));
+        asdf->setContentsMargins(0, 0, 0, 0);
         mapRenderWidget = new RenderWidget(editorLayout);
         mapRenderWidget->setObjectName(QStringLiteral("mapRenderWidget"));
         QSizePolicy sizePolicy1(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
@@ -474,6 +485,8 @@ public:
         menuBar->setGeometry(QRect(0, 0, 800, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
+        menuAbout = new QMenu(menuBar);
+        menuAbout->setObjectName(QStringLiteral("menuAbout"));
         MapEditorGUIClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MapEditorGUIClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -483,10 +496,13 @@ public:
         MapEditorGUIClass->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
+        menuBar->addAction(menuAbout->menuAction());
         menuFile->addAction(newMapAction);
         menuFile->addAction(openMapAction);
         menuFile->addSeparator();
         menuFile->addAction(saveMapAction);
+        menuAbout->addAction(reportBugAction);
+        menuAbout->addAction(aboutAction);
 
         retranslateUi(MapEditorGUIClass);
 
@@ -499,6 +515,8 @@ public:
         newMapAction->setText(QApplication::translate("MapEditorGUIClass", "New", Q_NULLPTR));
         openMapAction->setText(QApplication::translate("MapEditorGUIClass", "Open", Q_NULLPTR));
         saveMapAction->setText(QApplication::translate("MapEditorGUIClass", "Save", Q_NULLPTR));
+        aboutAction->setText(QApplication::translate("MapEditorGUIClass", "About Patchbot Mapcreator", Q_NULLPTR));
+        reportBugAction->setText(QApplication::translate("MapEditorGUIClass", "Report Bug", Q_NULLPTR));
         staticCursorLabel->setText(QApplication::translate("MapEditorGUIClass", "Cursor", Q_NULLPTR));
         followerButton->setText(QString());
         patchbotButton->setText(QString());
@@ -523,6 +541,7 @@ public:
         autoDoorButton->setText(QString());
         indestructibleWallButton->setText(QString());
         menuFile->setTitle(QApplication::translate("MapEditorGUIClass", "File", Q_NULLPTR));
+        menuAbout->setTitle(QApplication::translate("MapEditorGUIClass", "About", Q_NULLPTR));
     } // retranslateUi
 
 };

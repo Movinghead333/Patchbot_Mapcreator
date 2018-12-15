@@ -144,26 +144,43 @@ void MapEditorGUI::on_snifferButton_clicked()
 
 void MapEditorGUI::on_newMapAction_triggered()
 {
-	display_info_message_dialog("on_newMapAction_triggered");
+	//display_info_message_dialog("on_newMapAction_triggered");
 }
 
 void MapEditorGUI::on_openMapAction_triggered()
 {
-	display_info_message_dialog("on_openMapAction_triggered");
+	//display_info_message_dialog("on_openMapAction_triggered");
 }
 
 void MapEditorGUI::on_saveMapAction_triggered()
 {
-	display_info_message_dialog("on_saveMapAction_triggered");
+	//display_info_message_dialog("on_saveMapAction_triggered");
 }
+
+void MapEditorGUI::on_reportBugAction_triggered()
+{
+	display_info_message_dialog(m_view_model->REPORT_BUG_TITLE,
+								m_view_model->REPORT_BUG_MSG);
+}
+
+void MapEditorGUI::on_aboutAction_triggered()
+{
+	display_info_message_dialog(m_view_model->ABOUT_TITLE,
+								m_view_model->ABOUT_MSG);
+}
+
+
+
+
 
 // shows short information dialog displaying that a button has been clicked
 // and message which button has been pressed (p_message)
-void MapEditorGUI::display_info_message_dialog(const std::string& p_message)
+void MapEditorGUI::display_info_message_dialog(const std::string& p_title, 
+											   const std::string& p_message)
 {
 	QMessageBox::information(
 		this,
-		"Button clicked",
-		p_message.c_str());
+		p_title.c_str(),
+		tr(p_message.c_str()));
 }
 
