@@ -116,6 +116,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="mapeditorgui.cpp" />
+    <ClCompile Include="texture.cpp" />
     <ClCompile Include="utility.cpp" />
     <ClCompile Include="viewmodel.cpp" />
   </ItemGroup>
@@ -134,7 +135,9 @@
   <ItemGroup>
     <ClInclude Include="exceptions.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="texture.h" />
     <ClInclude Include="tiletype.h" />
+    <ClInclude Include="typedefinitions.h" />
     <ClInclude Include="utility.h" />
     <ClInclude Include="viewmodel.h" />
   </ItemGroup>

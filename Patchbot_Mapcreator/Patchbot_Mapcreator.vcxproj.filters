@@ -45,6 +45,9 @@
     <ClCompile Include="viewmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mapeditorgui.h">
@@ -80,6 +83,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="viewmodel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="typedefinitions.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

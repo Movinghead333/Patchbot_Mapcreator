@@ -10,9 +10,16 @@ vc 2:
 	- added functionality to save maps back to textfiles
 
 vc 3:
-	- added basic viewmodel for later data management between UIs and user-input
+	- added basic viewmodel for later data management between UIs and 
+	  user-input
+
+vc 4:
+	- added image loading and saving functionality
+	- added map for textures to viewmodel.h
 
 	
 TODO:
 	- rework documentation
 	- add GUI
+	- check if a map is correct when saving it
+	- add map tile chars and their tiletype representatives

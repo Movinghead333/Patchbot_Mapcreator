@@ -15,8 +15,8 @@ TileType Utility::get_tile_type_from_char(char p_char)
 	case ' ': return STEELPLANKS;		  break;
 	case '#': return INDESTRUCTABLE_WALL; break;
 	case 'M': return DESTRUCTABLE_WALL;	  break;
-	case 'd': return MANUAL_DOOR_CLOSED;  break;
-	case 'D': return AUTO_DOOR_CLOSED;    break;
+	case 'd': return MANUAL_DOOR;		  break;
+	case 'D': return AUTO_DOOR;		      break;
 	case 'g': return ALIEN_GRASS;		  break;
 	case '.': return GRAVEL;			  break;
 	case 'x': return SECRET_ENTRANCE;	  break;
@@ -41,8 +41,8 @@ char Utility::get_char_from_tile_type(TileType p_tile_Type)
 	case STEELPLANKS:		  return ' '; break;
 	case INDESTRUCTABLE_WALL: return '#'; break;
 	case DESTRUCTABLE_WALL:   return 'M'; break;
-	case MANUAL_DOOR_CLOSED:  return 'd'; break;
-	case AUTO_DOOR_CLOSED:    return 'D'; break;
+	case MANUAL_DOOR:		  return 'd'; break;
+	case AUTO_DOOR:			  return 'D'; break;
 	case ALIEN_GRASS:		  return 'g'; break;
 	case GRAVEL:			  return '.'; break;
 	case SECRET_ENTRANCE:	  return 'x'; break;
