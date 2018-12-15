@@ -42,6 +42,9 @@
     <ClCompile Include="utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="viewmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mapeditorgui.h">
@@ -74,6 +77,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="utility.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="viewmodel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

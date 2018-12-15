@@ -9,6 +9,9 @@ vc 1:
 vc 2:
 	- added functionality to save maps back to textfiles
 
+vc 3:
+	- added basic viewmodel for later data management between UIs and user-input
+
 	
 TODO:
 	- rework documentation
