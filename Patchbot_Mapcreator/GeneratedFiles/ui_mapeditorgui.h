@@ -22,8 +22,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollBar>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 #include <cursordisplaywidget.h>
 #include <renderwidget.h>
@@ -81,8 +79,6 @@ public:
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuAbout;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MapEditorGUIClass)
     {
@@ -488,12 +484,6 @@ public:
         menuAbout = new QMenu(menuBar);
         menuAbout->setObjectName(QStringLiteral("menuAbout"));
         MapEditorGUIClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(MapEditorGUIClass);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MapEditorGUIClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MapEditorGUIClass);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        MapEditorGUIClass->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuAbout->menuAction());

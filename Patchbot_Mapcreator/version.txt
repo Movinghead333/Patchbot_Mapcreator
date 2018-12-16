@@ -58,10 +58,14 @@ vc 15:
 
 vc 16:
 	- saving a map now shows a info dialog on success
+
+vc 17:
+	- when saving a map its validity is now checked first
 	
+
+
 TODO: (from highest to lowest priority)
 	
-	- check if a map is correct when saving it (sorta implemented)
 	- rework documentation
 	- add map tile chars and their tiletype representatives
 	

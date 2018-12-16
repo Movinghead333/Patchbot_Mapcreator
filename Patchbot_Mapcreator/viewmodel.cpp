@@ -7,6 +7,9 @@ ViewModel::ViewModel()
 
 void ViewModel::save_current_map_to_file() const
 {
+	bool hasStart = false;
+	bool hasEnd = false;
+
 	for (int y = 0; y < m_current_map->get_map_height(); y++)
 	{
 		for (int x = 0; x < m_current_map->get_map_width(); x++) {
@@ -16,8 +19,34 @@ void ViewModel::save_current_map_to_file() const
 				throw Simple_Message_Exception(
 					"Map contains placeholder tile!");
 			}
+
+			if (tile_type == ROOT_SERVER)
+			{
+				hasEnd = true;
+			}
+
+			if (tile_type == PATCHBOT && !hasStart)
+			{
+				hasStart = true;
+			}
+			else if (tile_type == PATCHBOT && hasStart)
+			{
+				throw Simple_Message_Exception("Map can only have one "
+					"starting-point!");
+			}
 		}
 	}
+
+	if (!hasEnd)
+	{
+		throw Simple_Message_Exception("Map has no end!");
+	}
+
+	if (!hasStart)
+	{
+		throw Simple_Message_Exception("Map has no starting point!");
+	}
+
 	Map::save_map(*m_current_map, m_current_map_file_path);
 }
 

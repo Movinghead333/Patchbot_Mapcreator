@@ -232,6 +232,10 @@ void MapEditorGUI::on_openMapAction_triggered()
 	try
 	{
 		m_view_model->load_map_from_file_path(file_path);
+		handle_resize_event();
+		m_view_model->set_m_current_map_file_path(file_path);
+		this->set_window_title();
+		ui.saveMapAction->setEnabled(true);
 	}
 	// catch all specified exceptions
 	catch (const Simple_Message_Exception& e)
@@ -245,11 +249,6 @@ void MapEditorGUI::on_openMapAction_triggered()
 	{
 		std::cout << "Unchecked exception thrown" << std::endl;
 	}
-
-	handle_resize_event();
-	m_view_model->set_m_current_map_file_path(file_path);
-	this->set_window_title();
-	ui.saveMapAction->setEnabled(true);
 }
 
 void MapEditorGUI::on_saveMapAction_triggered()
@@ -257,6 +256,8 @@ void MapEditorGUI::on_saveMapAction_triggered()
 	try
 	{
 		m_view_model->save_current_map_to_file();
+		display_info_message_dialog("Map saved!",
+			"Map saved to: " + m_view_model->get_m_current_map_file_path());
 	}
 	// catch all specified exceptions
 	catch (const Simple_Message_Exception& e)
@@ -270,8 +271,7 @@ void MapEditorGUI::on_saveMapAction_triggered()
 	{
 		std::cout << "Unchecked exception thrown" << std::endl;
 	}
-	display_info_message_dialog("Map saved!",
-		"Map saved to: " + m_view_model->get_m_current_map_file_path());
+	
 }
 
 void MapEditorGUI::on_reportBugAction_triggered()
