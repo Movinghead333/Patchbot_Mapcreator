@@ -270,6 +270,8 @@ void MapEditorGUI::on_saveMapAction_triggered()
 	{
 		std::cout << "Unchecked exception thrown" << std::endl;
 	}
+	display_info_message_dialog("Map saved!",
+		"Map saved to: " + m_view_model->get_m_current_map_file_path());
 }
 
 void MapEditorGUI::on_reportBugAction_triggered()

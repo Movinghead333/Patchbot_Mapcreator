@@ -55,6 +55,9 @@ vc 14:
 vc 15:
 	- fixed a bug where you could draw out of the map's bounds causing
 	  undefined behaviour
+
+vc 16:
+	- saving a map now shows a info dialog on success
 	
 TODO: (from highest to lowest priority)
 	
