@@ -98,6 +98,11 @@ bool ViewModel::map_available() const
 	return m_current_map != nullptr;
 }
 
+void ViewModel::create_empty_map_by_dimensions(int p_width, int p_height)
+{
+	m_current_map = std::make_shared<Map>(Map(p_width, p_height));
+}
+
 Map& ViewModel::get_current_map()
 {
 	return *m_current_map.get();

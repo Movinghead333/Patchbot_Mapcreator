@@ -45,6 +45,9 @@ vc 11:
 vc 12:
 	- files can now be saved in dirs with no write-protection
 	- the very first deployable version of Patchbot Mapcreated is finished!
+
+vc 13:
+	- added functionality to create empty maps in ViewModel
 	
 TODO: (from highest to lowest priority)
 	

@@ -13,6 +13,8 @@ class Map
 public:
 	Map(int p_map_width, int p_map_height, std::vector<TileType> p_map_data);
 
+	Map(int p_map_width, int p_map_height);
+
 	int get_map_width() const;
 	int get_map_height() const;
 

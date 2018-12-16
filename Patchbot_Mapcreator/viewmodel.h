@@ -65,6 +65,8 @@ public:
 	// check if there currently is a map instance stored in the ViewModel
 	bool map_available() const;
 
+	// create map with given dimensions and fill it with RESET
+	void create_empty_map_by_dimensions(int p_width, int p_height);
 
 	// GETTERS & SETTERS
 		

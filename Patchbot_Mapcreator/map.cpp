@@ -11,6 +11,21 @@ Map::Map(int p_map_width, int p_map_height, std::vector<TileType> p_map_data) :
 {
 }
 
+Map::Map(int p_map_width, int p_map_height) :
+	m_map_width(p_map_width), m_map_height(p_map_height)
+{
+	std::vector<TileType> m_map_data = std::vector<TileType>();
+	m_map_data.reserve(p_map_width * p_map_height);
+
+	for (int y = 0; y < p_map_height; y++)
+	{
+		for (int x = 0; x < p_map_width; x++)
+		{
+			m_map_data[(y * p_map_width) + x] = RESET;
+		}
+	}
+}
+
 int Map::get_map_width() const
 {
 	return m_map_width;
