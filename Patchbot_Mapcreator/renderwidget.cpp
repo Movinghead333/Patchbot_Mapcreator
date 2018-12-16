@@ -27,7 +27,7 @@ void RenderWidget::paintEvent(QPaintEvent * event)
 
 void RenderWidget::mousePressEvent(QMouseEvent *event)
 {
-	if (event->button() == Qt::LeftButton)
+	if (m_view_model->map_available() && event->button() == Qt::LeftButton)
 	{
 		handle_mouse_click(event->pos());
 	}

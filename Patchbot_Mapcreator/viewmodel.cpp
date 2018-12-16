@@ -100,7 +100,9 @@ bool ViewModel::map_available() const
 
 void ViewModel::create_empty_map_by_dimensions(int p_width, int p_height)
 {
-	m_current_map = std::make_shared<Map>(Map(p_width, p_height));
+	m_current_map.reset();
+	Map map = Map(p_width, p_height);
+	m_current_map = std::make_shared<Map>( map );
 }
 
 Map& ViewModel::get_current_map()

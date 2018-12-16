@@ -4,6 +4,7 @@
 
 #include "ui_mapeditorgui.h"
 #include "viewmodel.h"
+#include "newmapdialog.h"
 
 class MapEditorGUI : public QMainWindow
 {
@@ -61,7 +62,7 @@ private:
 
 	void handle_resize_event();
 
-	void set_window_title(const std::string p_file_path = "");
+	void set_window_title();
 
 	void display_info_message_dialog(const std::string& p_title,
 		const std::string& p_message);

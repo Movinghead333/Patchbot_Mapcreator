@@ -54,6 +54,9 @@
     <ClCompile Include="cursordisplaywidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="newmapdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mapeditorgui.h">
@@ -65,9 +68,15 @@
     <QtMoc Include="cursordisplaywidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="newmapdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="mapeditorgui.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="newmapdialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

@@ -78,10 +78,11 @@ void MapEditorGUI::handle_resize_event()
 	}
 }
 
-void MapEditorGUI::set_window_title(const std::string p_file_path)
+void MapEditorGUI::set_window_title()
 {
 	this->setWindowTitle(
-		QString::fromStdString(m_view_model->STR_MAP_LOADED + p_file_path));
+		QString::fromStdString(m_view_model->STR_MAP_LOADED) + 
+		QString::fromStdString(m_view_model->get_m_current_map_file_path()) );
 }
 
 
@@ -212,7 +213,12 @@ void MapEditorGUI::on_snifferButton_clicked()
 // menu slots
 void MapEditorGUI::on_newMapAction_triggered()
 {
-	//display_info_message_dialog("on_newMapAction_triggered");
+	NewMapDialog new_map_dialog(m_view_model);
+	new_map_dialog.setModal(true);
+	new_map_dialog.exec();
+	handle_resize_event();
+	set_window_title();
+	ui.saveMapAction->setEnabled(true);
 }
 
 void MapEditorGUI::on_openMapAction_triggered()
@@ -226,7 +232,6 @@ void MapEditorGUI::on_openMapAction_triggered()
 	try
 	{
 		m_view_model->load_map_from_file_path(file_path);
-		handle_resize_event();
 	}
 	// catch all specified exceptions
 	catch (const Simple_Message_Exception& e)
@@ -241,8 +246,9 @@ void MapEditorGUI::on_openMapAction_triggered()
 		std::cout << "Unchecked exception thrown" << std::endl;
 	}
 
-	this->set_window_title(file_path);
+	handle_resize_event();
 	m_view_model->set_m_current_map_file_path(file_path);
+	this->set_window_title();
 	ui.saveMapAction->setEnabled(true);
 }
 

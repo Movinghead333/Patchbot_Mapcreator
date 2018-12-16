@@ -48,6 +48,9 @@ vc 12:
 
 vc 13:
 	- added functionality to create empty maps in ViewModel
+
+vc 14:
+	- new maps can now be created from window and be saved to file
 	
 TODO: (from highest to lowest priority)
 	
@@ -55,3 +58,4 @@ TODO: (from highest to lowest priority)
 	- add create new map functionality
 	- rework documentation
 	- add map tile chars and their tiletype representatives
+	
