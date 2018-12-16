@@ -51,11 +51,14 @@ vc 13:
 
 vc 14:
 	- new maps can now be created from window and be saved to file
+
+vc 15:
+	- fixed a bug where you could draw out of the map's bounds causing
+	  undefined behaviour
 	
 TODO: (from highest to lowest priority)
 	
 	- check if a map is correct when saving it (sorta implemented)
-	- add create new map functionality
 	- rework documentation
 	- add map tile chars and their tiletype representatives
 	

@@ -54,8 +54,16 @@ void RenderWidget::handle_mouse_click(QPoint p_mouse_pos)
 	int tile_x = (mouse_x_total - (mouse_x_total % tile_size)) / tile_size;
 	int tile_y = (mouse_y_total - (mouse_y_total % tile_size)) / tile_size;
 
-	m_view_model->set_map_tile_at_pos_to_cursor(tile_x, tile_y);
-	update();
+
+	Map& map = m_view_model->get_current_map();
+	int map_width = map.get_map_width();
+	int map_height = map.get_map_height();
+
+	if (tile_x < map_width && tile_y < map_height)
+	{
+		m_view_model->set_map_tile_at_pos_to_cursor(tile_x, tile_y);
+		update();
+	}
 }
 
 void RenderWidget::render()
