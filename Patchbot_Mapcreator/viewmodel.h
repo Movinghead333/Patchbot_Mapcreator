@@ -15,19 +15,27 @@ public:
 	// CONSTANTS:
 	 
 	// strings for about dialog
-	const std::string ABOUT_MSG =
+	const std::string STR_ABOUT_MSG =
 		"This is small tool designed to open, edit and save maps for the "
-		"game Patchbot.";
-	const std::string ABOUT_TITLE = "About";
+		"game Patchbot.\n"
+		"Version: 1.0";
+	const std::string STR_ABOUT_TITLE = "About";
 
 	// strings for report a bug dialog
-	const std::string REPORT_BUG_TITLE = "Report a bug";
-	const std::string REPORT_BUG_MSG = "If you have found a bug, then please "
+	const std::string STR_REPORT_BUG_TITLE = "Report a bug";
+	const std::string STR_REPORT_BUG_MSG = "If you have found a bug, then please "
 		"report it to "
 		"\nhttps://github.com/Movinghead333/Patchbot_Mapcreator/issues";
 
 	// string for window upon map loading errors
-	const std::string MAP_LOADING_ERROR_TITLE = "Error loading map!";
+	const std::string STR_MAP_LOADING_ERROR_TITLE = "Error loading map!";
+
+	// string for map saving errors
+	const std::string STR_MAP_SAVE_ERROR_TITLE = "Error saving map!";
+
+	// for display in window title
+	const std::string STR_APP_NAME = "Patchbot MapEditor";
+	const std::string STR_MAP_LOADED = STR_APP_NAME + " - Editing: ";
 
 	const int TILE_SIZE = 32;
 
@@ -35,6 +43,9 @@ public:
 
 	// invokes load_images()
 	ViewModel();
+
+	// save current map to file
+	void save_current_map_to_file() const;
 
 	// set the TileType at a given position to the TileType on cursor
 	void set_map_tile_at_pos_to_cursor(int p_x, int p_y);
@@ -78,6 +89,10 @@ public:
 	void set_cursor_tile_type(TileType p_new_tile_type);
 	TileType get_cursor_tile_type() const;
 
+	// getters and setters for current_map_file_path
+	void set_m_current_map_file_path(const std::string& p_file_path);
+	const std::string& get_m_current_map_file_path() const
+		;
 private:
 	// x and y scrollbar positions
 	int m_x_scrollbar_pos = 0;
@@ -86,6 +101,9 @@ private:
 	// editor render width and height
 	int m_render_width;
 	int m_render_height;
+
+	// filepath for current map
+	std::string m_current_map_file_path = "";
 
 	// stores the map, which is currently being edited
 	std::shared_ptr<Map> m_current_map;

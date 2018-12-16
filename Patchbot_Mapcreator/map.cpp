@@ -158,16 +158,17 @@ Map Map::load_map(const std::string & p_file_name)
 	}
 
 	std::cout << "Loading Map from file: " << p_file_name;
-	std::cout << "was successful!" << std::endl;
+	std::cout << " was successful!" << std::endl;
 
 	return Map(width, height, temp_map_data);
 }
 
-void Map::save_map(const Map& p_map)
+void Map::save_map(const Map& p_map, const std::string& p_file_path)
 {
 	std::cout << "Saving current map..." << std::endl;
+	std::cout << p_file_path << std::endl;
 	std::ofstream output_file;
-	output_file.open("new.txt");
+	output_file.open(p_file_path, std::ios::out | std::ios::trunc);
 
 
 	int width = p_map.get_map_width();

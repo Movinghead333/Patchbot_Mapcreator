@@ -5,6 +5,22 @@ ViewModel::ViewModel()
 	load_images();
 }
 
+void ViewModel::save_current_map_to_file() const
+{
+	for (int y = 0; y < m_current_map->get_map_height(); y++)
+	{
+		for (int x = 0; x < m_current_map->get_map_width(); x++) {
+			TileType tile_type = m_current_map->get_tile_type_at_pos(x, y);
+			if (tile_type == RESET)
+			{
+				throw Simple_Message_Exception(
+					"Map contains placeholder tile!");
+			}
+		}
+	}
+	Map::save_map(*m_current_map, m_current_map_file_path);
+}
+
 void ViewModel::set_map_tile_at_pos_to_cursor(int p_x, int p_y)
 {
 	// TODO: checks map conditions
@@ -135,5 +151,15 @@ void ViewModel::set_cursor_tile_type(TileType p_new_tile_type)
 TileType ViewModel::get_cursor_tile_type() const
 {
 	return m_cursor_tile_type;
+}
+
+void ViewModel::set_m_current_map_file_path(const std::string & p_file_path)
+{
+	m_current_map_file_path = p_file_path;
+}
+
+const std::string & ViewModel::get_m_current_map_file_path() const
+{
+	return m_current_map_file_path;
 }
 

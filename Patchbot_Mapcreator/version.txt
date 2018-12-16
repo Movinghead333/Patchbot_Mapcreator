@@ -37,11 +37,18 @@ vc 9:
 
 vc 10:
 	- added mouse interaction for editing the map
+
+vc 11:
+	- you cannot save when there is no map open
+	- window title now represents the state of the application
+
+vc 12:
+	- files can now be saved in dirs with no write-protection
+	- the very first deployable version of Patchbot Mapcreated is finished!
 	
-TODO:
+TODO: (from highest to lowest priority)
+	
+	- check if a map is correct when saving it (sorta implemented)
+	- add create new map functionality
 	- rework documentation
-	- check if a map is correct when saving it
 	- add map tile chars and their tiletype representatives
-	- add version to about msg
-	- add current map name to window title
-	- add create new colony functionality

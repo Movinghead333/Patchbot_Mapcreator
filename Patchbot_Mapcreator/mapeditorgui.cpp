@@ -8,11 +8,13 @@ MapEditorGUI::MapEditorGUI(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	ui.saveMapAction->setEnabled(false);
 
 	m_view_model = std::make_shared<ViewModel>(ViewModel());
 
 	ui.mapRenderWidget->set_view_model(m_view_model);
 	ui.cursorWidget->set_view_model(m_view_model);
+	this->setWindowTitle(QString::fromStdString(m_view_model->STR_APP_NAME));
 
 	// connect scrollbars
 	connect(ui.editorXScrollbar, SIGNAL(valueChanged(int)),
@@ -74,6 +76,12 @@ void MapEditorGUI::handle_resize_event()
 		m_view_model->set_m_render_width(ui.mapRenderWidget->width());
 		m_view_model->set_m_render_height(ui.mapRenderWidget->height());
 	}
+}
+
+void MapEditorGUI::set_window_title(const std::string p_file_path)
+{
+	this->setWindowTitle(
+		QString::fromStdString(m_view_model->STR_MAP_LOADED + p_file_path));
 }
 
 
@@ -224,8 +232,32 @@ void MapEditorGUI::on_openMapAction_triggered()
 	catch (const Simple_Message_Exception& e)
 	{
 		std::cerr << e.m_error_message << std::endl;
-		display_info_message_dialog(m_view_model->MAP_LOADING_ERROR_TITLE,
+		display_error_message_dialog(m_view_model->STR_MAP_LOADING_ERROR_TITLE,
 									e.m_error_message);
+	}
+	// catch any non aticipated exceptions
+	catch (...)
+	{
+		std::cout << "Unchecked exception thrown" << std::endl;
+	}
+
+	this->set_window_title(file_path);
+	m_view_model->set_m_current_map_file_path(file_path);
+	ui.saveMapAction->setEnabled(true);
+}
+
+void MapEditorGUI::on_saveMapAction_triggered()
+{
+	try
+	{
+		m_view_model->save_current_map_to_file();
+	}
+	// catch all specified exceptions
+	catch (const Simple_Message_Exception& e)
+	{
+		std::cerr << e.m_error_message << std::endl;
+		display_error_message_dialog(m_view_model->STR_MAP_SAVE_ERROR_TITLE,
+									 e.m_error_message);
 	}
 	// catch any non aticipated exceptions
 	catch (...)
@@ -234,21 +266,16 @@ void MapEditorGUI::on_openMapAction_triggered()
 	}
 }
 
-void MapEditorGUI::on_saveMapAction_triggered()
-{
-	//display_info_message_dialog("on_saveMapAction_triggered");
-}
-
 void MapEditorGUI::on_reportBugAction_triggered()
 {
-	display_info_message_dialog(m_view_model->REPORT_BUG_TITLE,
-								m_view_model->REPORT_BUG_MSG);
+	display_info_message_dialog(m_view_model->STR_REPORT_BUG_TITLE,
+								m_view_model->STR_REPORT_BUG_MSG);
 }
 
 void MapEditorGUI::on_aboutAction_triggered()
 {
-	display_info_message_dialog(m_view_model->ABOUT_TITLE,
-								m_view_model->ABOUT_MSG);
+	display_info_message_dialog(m_view_model->STR_ABOUT_TITLE,
+								m_view_model->STR_ABOUT_MSG);
 }
 
 // scrollbar slots
@@ -272,6 +299,14 @@ void MapEditorGUI::display_info_message_dialog(const std::string& p_title,
 											   const std::string& p_message)
 {
 	QMessageBox::information(
+		this,
+		p_title.c_str(),
+		tr(p_message.c_str()));
+}
+
+void MapEditorGUI::display_error_message_dialog(const std::string & p_title, const std::string & p_message)
+{
+	QMessageBox::warning(
 		this,
 		p_title.c_str(),
 		tr(p_message.c_str()));

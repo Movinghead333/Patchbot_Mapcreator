@@ -18,7 +18,7 @@ public:
 
 	static Map load_map(const std::string& p_file_name);
 
-	static void save_map(const Map& p_map);
+	static void save_map(const Map& p_map, const std::string& p_file_path);
 
 	TileType get_tile_type_at_pos(int p_x, int p_y) const;
 

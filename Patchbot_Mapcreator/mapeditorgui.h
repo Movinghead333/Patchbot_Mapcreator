@@ -49,8 +49,7 @@ private slots:
 public:
 	MapEditorGUI(QWidget *parent = Q_NULLPTR);
 
-	void display_info_message_dialog(const std::string& p_title,
-									 const std::string& p_message);
+	
 
 protected:
 	void resizeEvent(QResizeEvent *event);
@@ -61,4 +60,12 @@ private:
 	std::shared_ptr<ViewModel> m_view_model;
 
 	void handle_resize_event();
+
+	void set_window_title(const std::string p_file_path = "");
+
+	void display_info_message_dialog(const std::string& p_title,
+		const std::string& p_message);
+
+	void display_error_message_dialog(const std::string& p_title,
+		const std::string& p_message);
 };

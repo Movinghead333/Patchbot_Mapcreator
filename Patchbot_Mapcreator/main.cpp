@@ -23,7 +23,7 @@ void load_and_save_map()
 {
 	Map m = Map::load_map("everything.txt");
 
-	Map::save_map(m);
+	//Map::save_map(m);
 }
 
 // for debugging purposes
