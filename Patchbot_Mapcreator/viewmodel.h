@@ -16,7 +16,7 @@ public:
 	 
 	// strings for about dialog
 	const std::string STR_ABOUT_MSG =
-		"This is small tool designed to open, edit and save maps for the "
+		"This is a small tool designed to open, edit and save maps for the "
 		"game Patchbot.\n"
 		"Version: 1.0";
 	const std::string STR_ABOUT_TITLE = "About";

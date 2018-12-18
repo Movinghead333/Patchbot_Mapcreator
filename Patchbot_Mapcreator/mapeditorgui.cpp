@@ -214,6 +214,7 @@ void MapEditorGUI::on_snifferButton_clicked()
 void MapEditorGUI::on_newMapAction_triggered()
 {
 	NewMapDialog new_map_dialog(m_view_model);
+	new_map_dialog.setWindowTitle("Create new map:");
 	new_map_dialog.setModal(true);
 	new_map_dialog.exec();
 	handle_resize_event();

@@ -35,6 +35,10 @@ void RenderWidget::mousePressEvent(QMouseEvent *event)
 
 void RenderWidget::mouseMoveEvent(QMouseEvent * event)
 {
+	if (m_view_model->map_available())
+	{
+		handle_mouse_click(event->pos());
+	}
 }
 
 void RenderWidget::mouseReleaseEvent(QMouseEvent * event)

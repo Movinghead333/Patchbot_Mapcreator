@@ -61,11 +61,16 @@ vc 16:
 
 vc 17:
 	- when saving a map its validity is now checked first
-	
+
+vc 18:
+	- fixed some string resources
+	- added the functionality to hold down mouse to continously draw on the map
+
 
 
 TODO: (from highest to lowest priority)
 	
 	- rework documentation
 	- add map tile chars and their tiletype representatives
+	- maybe add check when placing start if there already is one to replace it
 	
