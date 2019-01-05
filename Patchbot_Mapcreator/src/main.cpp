@@ -8,6 +8,9 @@
 
 int main(int argc, char *argv[])
 {
+	// support high density screens
+	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
 	QApplication a(argc, argv);
 	MapEditorGUI w;
 	w.show();
