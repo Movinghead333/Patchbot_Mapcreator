@@ -66,6 +66,9 @@ vc 18:
 	- fixed some string resources
 	- added the functionality to hold down mouse to continously draw on the map
 
+vc 19:
+	- revamped the project file structure
+
 
 
 TODO: (from highest to lowest priority)

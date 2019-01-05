@@ -30,55 +30,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mapeditorgui.cpp">
+    <ClCompile Include="src\cursordisplaywidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="map.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utility.cpp">
+    <ClCompile Include="src\mapeditorgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="viewmodel.cpp">
+    <ClCompile Include="src\newmapdialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="texture.cpp">
+    <ClCompile Include="src\renderwidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="renderwidget.cpp">
+    <ClCompile Include="src\texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cursordisplaywidget.cpp">
+    <ClCompile Include="src\utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="newmapdialog.cpp">
+    <ClCompile Include="src\viewmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="mapeditorgui.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="renderwidget.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="cursordisplaywidget.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="newmapdialog.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="mapeditorgui.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="newmapdialog.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="mapeditorgui.qrc">
@@ -86,31 +64,51 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="version.txt">
-      <Filter>Source Files</Filter>
-    </Text>
+    <ClInclude Include="include\exceptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tiletype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\typedefinitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\viewmodel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="exceptions.h">
+    <QtMoc Include="include\cursordisplaywidget.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tiletype.h">
+    </QtMoc>
+    <QtMoc Include="include\mapeditorgui.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="texture.h">
+    </QtMoc>
+    <QtMoc Include="include\newmapdialog.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utility.h">
+    </QtMoc>
+    <QtMoc Include="include\renderwidget.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="viewmodel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="typedefinitions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="ui\mapeditorgui.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\newmapdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="version.txt" />
   </ItemGroup>
 </Project>
